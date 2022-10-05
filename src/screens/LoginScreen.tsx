@@ -1,38 +1,11 @@
+import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ImageBackground,
-  Dimensions,
-  ActivityIndicator,
-} from 'react-native';
+import {View, Text, StyleSheet, Image, ImageBackground} from 'react-native';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
-import {useSerie} from '../hooks/useSerie';
 
-const {height: windowHeigth} = Dimensions.get('window');
+interface Props extends StackScreenProps<any, any> {}
 
-export const LoginScreen = () => {
-  const {isLoad} = useSerie();
-
-  {
-    if (isLoad) {
-      return (
-        //image load
-        <View style={{flex: 1}}>
-          <Image
-            style={{height: windowHeigth}}
-            source={require('../assets/imgRickMor.jpg')}
-          />
-          <View style={styles.loading}>
-            <ActivityIndicator color="green" size={100} />
-          </View>
-        </View>
-      );
-    }
-  }
-
+export const LoginScreen = ({navigation}: Props) => {
   return (
     <ImageBackground
       source={require('../assets/galaxy1.jpg')}
@@ -55,7 +28,7 @@ export const LoginScreen = () => {
             placeholderTextColor="#99ff33"
             style={styles.input}
           />
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <View style={styles.contentRegister}>
               <Text style={styles.textRegister}>Registrarme</Text>
             </View>
@@ -73,7 +46,7 @@ const styles = StyleSheet.create({
     marginLeft: -60,
   },
   textContent: {
-    color: '#32ff7e',
+    color: '#99ff33',
     fontSize: 25,
     fontWeight: 'bold',
   },
@@ -81,11 +54,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     width: 450,
-  },
-  loading: {
-    position: 'absolute',
-    marginHorizontal: 200,
-    marginVertical: 500,
   },
   formContainer: {
     alignItems: 'center',

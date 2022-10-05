@@ -15,6 +15,7 @@ const Stack = createStackNavigator<RootStackParams>();
 export const Navigation = () => {
   return (
     <Stack.Navigator
+      initialRouteName="Login"
       screenOptions={{
         headerShown: false,
       }}>

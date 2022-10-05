@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   textContent: {
-    color: '#32ff7e',
+    color: '#99ff33',
     fontSize: 25,
     fontWeight: 'bold',
   },
