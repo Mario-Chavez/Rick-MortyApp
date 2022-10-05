@@ -18,19 +18,19 @@ export const LoginScreen = ({navigation}: Props) => {
             source={require('../assets/RickMorty.png')}
           />
           <TextInput
-            placeholder="Ecribe tu email ..."
+            placeholder="Email ...."
             placeholderTextColor="#99ff33"
             style={styles.input}
           />
           <TextInput
-            placeholder="Ecribe Password ..."
+            placeholder="Password ...."
             secureTextEntry={true}
             placeholderTextColor="#99ff33"
             style={styles.input}
           />
           <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <View style={styles.contentRegister}>
-              <Text style={styles.textRegister}>Registrarme</Text>
+              <Text style={styles.textRegister}> Sig in </Text>
             </View>
           </TouchableOpacity>
         </View>

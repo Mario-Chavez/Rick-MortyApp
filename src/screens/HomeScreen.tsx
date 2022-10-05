@@ -49,16 +49,16 @@ export const HomeScreen = () => {
   }
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <ImageBackground
-          source={require('../assets/galaxy1.jpg')}
-          resizeMode="stretch"
-          style={styles.image}>
+    <View style={styles.container}>
+      <ImageBackground
+        source={require('../assets/galaxy1.jpg')}
+        resizeMode="stretch"
+        style={styles.image}>
+        <ScrollView>
           <View style={{marginTop: top, marginBottom: 20}}></View>
 
           <View style={styles.contentTextTitle}>
-            <Text style={styles.TextTitle}>Bienvenido elige un personaje</Text>
+            <Text style={styles.TextTitle}>Welcome choose a character</Text>
           </View>
 
           <CarouselComp itemPers={characterPage1} />
@@ -71,9 +71,9 @@ export const HomeScreen = () => {
           <CarouselComp itemPers={characterPage8} />
           <CarouselComp itemPers={characterPage9} />
           <CarouselComp itemPers={characterPage10} />
-        </ImageBackground>
-      </View>
-    </ScrollView>
+        </ScrollView>
+      </ImageBackground>
+    </View>
   );
 };
 const styles = StyleSheet.create({
