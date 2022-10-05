@@ -3,8 +3,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen} from '../screens/HomeScreen';
 import {DetailScreen} from '../screens/DetailScreen';
 import {LoginScreen} from '../screens/LoginScreen';
+
 export type RootStackParams = {
-  LoginScreen: undefined;
+  Login: undefined;
   Home: undefined;
   DetailScreen: undefined;
 };
