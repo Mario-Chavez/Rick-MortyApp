@@ -4,17 +4,12 @@ import {
   Text,
   ScrollView,
   StyleSheet,
-  Image,
-  ActivityIndicator,
-  Dimensions,
   ImageBackground,
 } from 'react-native';
 
 import {useSerie} from '../hooks/useSerie';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {CarouselComp} from '../components/CarouselComp';
-
-const {height: windowHeigth} = Dimensions.get('window');
 
 export const HomeScreen = () => {
   const {top} = useSafeAreaInsets();
@@ -29,25 +24,8 @@ export const HomeScreen = () => {
     characterPage8,
     characterPage9,
     characterPage10,
-    isLoad,
   } = useSerie();
 
-  {
-    if (isLoad) {
-      return (
-        //image load
-        <View style={{flex: 1}}>
-          <Image
-            style={{height: windowHeigth}}
-            source={require('../assets/imgRickMor.jpg')}
-          />
-          <View style={styles.loading}>
-            <ActivityIndicator color="green" size={100} />
-          </View>
-        </View>
-      );
-    }
-  }
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -96,11 +74,5 @@ const styles = StyleSheet.create({
     marginLeft: -40,
     fontSize: 28,
     fontWeight: 'bold',
-  },
-
-  loading: {
-    position: 'absolute',
-    marginHorizontal: 200,
-    marginVertical: 500,
   },
 });
